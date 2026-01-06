@@ -206,6 +206,56 @@ arr = array('i', [23, 4, 7, 45, 1, 21])
 
 print(f"The second largest element in the {arr} = {sec_best(arr)}")
 
+# 8. Rotate Array by 1
+
+# Task: Right-rotate and Left-rotate the array by one position
+# Concept: Shifting elements
+
+# deep insights:-
+# Two types of rotation:-
+#1.Left-rotation: Take elements from the left of the array .i.e. starting of the array and put them to the right of the array .i.e. last of the array and shift the rest of the array accordingly. This is called left-rotation.
+# left-rotation by 1 means taking the elements from the 0th index and put that to the last index and shifting rest of the array accordingly.
+
+#2. Right-rotation: Take elements from the right of the array .i.e. last of the array and put them to the left of the array .i.e. start of the array and shift the rest of the array accordingly. This is called Right-rotation.
+# Right-rotation by 1 means taking the elements from the (len(arr)-1)th index and put that to the starting index and shifting rest of the array accordingly.
+
+# approach:-
+# If we are writing an algorithm for left-rotation by 1 or Right-rotation by 1, the onething that we have to keep in mind is that we save the element which is going to be shifted from one side to the other and then we perform the shifting opposite the flow (rest of the elements ko kis hisab se shift karna hai usse decide hota hai flow). Have a look at the algorithms below.
+
+# Algorithm for Right-rotation:-
+from array import *
+
+arr = array('i', [1, 2, 3, 4, 5, 6])
+
+temp = arr[(len(arr)-1)]
+
+for i in range (len(arr)):
+    if (i != (len(arr)-1)):
+        arr[((len(arr)-1)-i)] = arr[((len(arr)-1)-(i+1))]
+
+    if (i == (len(arr)-1)):
+        arr[0] = temp
+
+for i in arr:
+    print(i, end=" ")
+
+# Algorithm for left-rotation:-
+from array import *
+
+val = array('i', [7, 8, 9, 10, 11])
+
+var = val[0]
+
+for i in range(len(val)):
+    if (i != (len(val)-1)):
+        val[i] = val[i+1]
+    if (i == (len(val)-1)):
+        val[(len(val)-1)] = var
+
+for i in val:
+    print(i,end=" ")
+
+
 
 
 
