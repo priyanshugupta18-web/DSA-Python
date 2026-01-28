@@ -69,3 +69,4 @@ l1.insertAtBeg(15)
 l1.insertAtMid(30, 25)
 l1.deletel(45)
 l1.printl()
+
